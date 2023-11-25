@@ -1,6 +1,6 @@
 export class LoginUserDto {
 
     email : string;
-    passworrd : string
+    password : string
 
 }

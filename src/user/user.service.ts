@@ -24,13 +24,13 @@ export class UserService {
 
     async findUserById(id:string) {
       const foundusesr = await this.userRepo.findOneBy({id})
-      if(!foundusesr) return foundusesr
+      if(foundusesr) return foundusesr
       throw new HttpException("xxxx", HttpStatus.NOT_FOUND)
     }
 
     async findUserByEmail(email:string) {
       const foundusesr = await this.userRepo.findOneBy({email})
-      if(!foundusesr) return foundusesr
+      if(foundusesr) return foundusesr
       throw new HttpException("xxxx", HttpStatus.NOT_FOUND)
     }
     
