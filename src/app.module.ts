@@ -3,13 +3,13 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { ProductModule } from './product/product.module';
-import { AuthModule } from './auth/auth.module';
 import { DblistModule } from './dblist/dblist.module';
 import { ConfigModule } from '@nestjs/config';
+import { AuthModule } from './auth/auth.module';
 import * as Joi from '@hapi/joi'
 
 @Module({
-  imports: [UserModule, ProductModule, AuthModule, DblistModule, ConfigModule.forRoot({
+  imports: [UserModule, ProductModule, DblistModule, ConfigModule.forRoot({
 
 
     validationSchema : Joi.object({
@@ -24,7 +24,7 @@ import * as Joi from '@hapi/joi'
 
     })
 
-  })],
+  }), AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
